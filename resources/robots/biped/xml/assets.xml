@@ -1,0 +1,17 @@
+<mujoco model = "assets">
+
+    <mesh name="LINK_BASE" file="../meshes/LINK_BASE.STL"/>
+    <mesh name="LINK_HIP_ROLL_L" file="../meshes/LINK_HIP_ROLL_L.STL"/>
+    <mesh name="LINK_HIP_YAW_L" file="../meshes/LINK_HIP_YAW_L.STL"/>
+    <mesh name="LINK_HIP_PITCH_L" file="../meshes/LINK_HIP_PITCH_L.STL"/>
+    <mesh name="LINK_KNEE_PITCH_L" file="../meshes/LINK_KNEE_PITCH_L.STL"/>
+    <mesh name="LINK_ANKLE_PITCH_L" file="../meshes/LINK_ANKLE_PITCH_L.STL"/>
+    <mesh name="LINK_ANKLE_ROLL_L" file="../meshes/LINK_ANKLE_ROLL_L.STL"/>
+    <mesh name="LINK_HIP_ROLL_R" file="../meshes/LINK_HIP_ROLL_R.STL"/>
+    <mesh name="LINK_HIP_YAW_R" file="../meshes/LINK_HIP_YAW_R.STL"/>
+    <mesh name="LINK_HIP_PITCH_R" file="../meshes/LINK_HIP_PITCH_R.STL"/>
+    <mesh name="LINK_KNEE_PITCH_R" file="../meshes/LINK_KNEE_PITCH_R.STL"/>
+    <mesh name="LINK_ANKLE_PITCH_R" file="../meshes/LINK_ANKLE_PITCH_R.STL"/>
+    <mesh name="LINK_ANKLE_ROLL_R" file="../meshes/LINK_ANKLE_ROLL_R.STL"/>
+
+</mujoco>

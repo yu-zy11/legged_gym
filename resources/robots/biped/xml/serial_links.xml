@@ -1,0 +1,76 @@
+<mujoco model = "serial_links">
+
+    <body name="LINK_HIP_ROLL_L" pos="0 0.075 0">
+        <inertial pos="0.0003501 0.00043844 -0.0020201" quat="-0.0065488 0.706024 -0.0111095 0.70807" mass="1.6592" diaginertia="0.00296297 0.00222409 0.00170967"/>
+        <joint name="J01_HIP_ROLL_L" pos="0 0 0" axis="1 0 0" range="-0.523 0.523" actuatorfrcrange="-140 140" class="joint" armature="0.042"/>
+        <geom type="mesh" rgba="0.75294 0.75294 0.75294 1" mesh="LINK_HIP_ROLL_L" class="visual"/>
+        <body name="LINK_HIP_YAW_L">
+            <inertial pos="0.00038352 0.0010044 -0.12214" quat="0.70363 0.00263141 -0.0033314 0.710554" mass="1.8008" diaginertia="0.00367949 0.00285141 0.00191724"/>
+            <joint name="J02_HIP_YAW_L" pos="0 0 0" axis="0 0 1" range="-0.3 0.3" actuatorfrcrange="-140 140" class="joint" armature="0.042"/>
+            <geom type="mesh" rgba="0.75294 0.75294 0.75294 1" mesh="LINK_HIP_YAW_L" class="visual"/>
+            <body name="LINK_HIP_PITCH_L" pos="0 0 -0.1311">
+                <inertial pos="-0.0017654 0.0012877 -0.13954" quat="0.705731 -0.0339526 -0.0114711 0.707573" mass="3.9299" diaginertia="0.0356364 0.0321225 0.0100504"/>
+                <joint name="J03_HIP_PITCH_L" pos="0 0 0" axis="0 1 0" range="-1.204 1.204" actuatorfrcrange="-140 140" class="joint" armature="0.042"/>
+                <geom type="mesh" rgba="0.75294 0.75294 0.75294 1" mesh="LINK_HIP_PITCH_L" class="visual"/>
+                <body name="LINK_KNEE_PITCH_L" pos="0 5.9998e-05 -0.3">
+                    <inertial pos="-0.00751 -0.00041 -0.16322" quat="0.693729 0.00650206 0.000979008 0.720206" mass="2.7251" diaginertia="0.0323536 0.0303232 0.0038887"/>
+                    <joint name="J04_KNEE_PITCH_L" pos="0 0 0" axis="0 1 0" range="0 2.268" actuatorfrcrange="-140 140" class="joint" armature="0.042"/>
+                    <geom type="mesh" rgba="0.75294 0.75294 0.75294 1" mesh="LINK_KNEE_PITCH_L" class="visual"/>
+                    <body name="LINK_ANKLE_PITCH_L" pos="0 7.0122e-05 -0.37">
+                        <inertial pos="-2.5946e-10 -5e-05 -3.4499e-09" quat="0 0.707107 0 0.707107" mass="0.16135" diaginertia="3.1681e-05 3.1274e-05 3.0975e-05"/>
+                        <joint name="J05_ANKLE_PITCH_L" pos="0 0 0" axis="0 1 0" range="-1 0.6" actuatorfrcrange="-24 24" class="visual"/>
+                        <geom type="mesh" rgba="0.75294 0.75294 0.75294 1" mesh="LINK_ANKLE_PITCH_L" class="visual"/>
+                        <body name="LINK_ANKLE_ROLL_L">
+                            <inertial pos="0.030366 0.0019502 -0.03549" quat="0 0.707107 0 0.707107" mass="1.1926" diaginertia="0.00646061 0.00606713 0.00105334"/>
+                            <joint name="J06_ANKLE_ROLL_L" pos="0 0 0" axis="1 0 0" range="-0.6 0.6" actuatorfrcrange="-24 24" class="visual"/>
+                            <geom type="mesh" rgba="0.75294 0.75294 0.75294 1" mesh="LINK_ANKLE_ROLL_L" class="visual"/>
+                            <body name="LINK_FOOT_L">
+                                <inertial pos="0 0 0" mass="1e-3" diaginertia="1e-12 1e-12 1e-12"/>
+                                <geom class="collision_left_foot"/>
+                                <site name="force_sensor_left_foot"/>
+                                <site name="torque_sensor_left_foot"/>
+                            </body>
+                        </body>
+                    </body>
+                </body>
+            </body>
+        </body>
+    </body>
+    <body name="LINK_HIP_ROLL_R" pos="0 -0.075 0">
+        <inertial pos="0.0003501 0.00043844 -0.0020201" quat="-0.0065488 0.706024 -0.0111095 0.70807" mass="1.6592" diaginertia="0.00296297 0.00222409 0.00170967"/>
+        <joint name="J07_HIP_ROLL_R" pos="0 0 0" axis="1 0 0" range="-0.523 0.523" actuatorfrcrange="-140 140" class="joint" armature="0.042"/>
+        <geom type="mesh" rgba="0.75294 0.75294 0.75294 1" mesh="LINK_HIP_ROLL_R" class="visual"/>
+        <body name="LINK_HIP_YAW_R">
+            <inertial pos="-0.00038352 -0.0010044 -0.12214" quat="0.70363 -0.00263141 0.0033314 0.710554" mass="1.8008" diaginertia="0.00367949 0.00285141 0.00191724"/>
+            <joint name="J08_HIP_YAW_R" pos="0 0 0" axis="0 0 1" range="-0.3 0.3" actuatorfrcrange="-140 140" class="joint" armature="0.042"/>
+            <geom type="mesh" rgba="0.75294 0.75294 0.75294 1" mesh="LINK_HIP_YAW_R" class="visual"/>
+            <body name="LINK_HIP_PITCH_R" pos="0 0 -0.1311">
+                <inertial pos="-0.0017403 -0.0012919 -0.13954" quat="0.708108 -0.0111519 -0.0337366 0.70521" mass="3.9294" diaginertia="0.0356245 0.032111 0.0100492"/>
+                <joint name="J09_HIP_PITCH_R" pos="0 0 0" axis="0 1 0" range="-1.204 1.204" actuatorfrcrange="-140 140" class="joint" armature="0.042"/>
+                <geom type="mesh" rgba="0.75294 0.75294 0.75294 1" mesh="LINK_HIP_PITCH_R" class="visual"/>
+                <body name="LINK_KNEE_PITCH_R" pos="0 -5.9998e-05 -0.3">
+                    <inertial pos="-0.00751 0.00047274 -0.16321" quat="0.72021 0.000981472 0.0065065 0.693725" mass="2.72497" diaginertia="0.0323518 0.0303213 0.00388869"/>
+                    <joint name="J10_KNEE_PITCH_R" pos="0 0 0" axis="0 1 0" range="0 2.268" actuatorfrcrange="-140 140" class="joint" armature="0.042"/>
+                    <geom type="mesh" rgba="0.75294 0.75294 0.75294 1" mesh="LINK_KNEE_PITCH_R" class="visual"/>
+                    <body name="LINK_ANKLE_PITCH_R" pos="0 -7.0122e-05 -0.37">
+                        <inertial pos="2.5946e-10 5e-05 -3.4499e-09" quat="0.5 0.5 0.5 0.5" mass="0.16135" diaginertia="3.1274e-05 3.1274e-05 3.0975e-05"/>
+                        <joint name="J11_ANKLE_PITCH_R" pos="0 0 0" axis="0 1 0" range="-1 0.6" actuatorfrcrange="-24 24" class="visual"/>
+                        <geom type="mesh" rgba="0.75294 0.75294 0.75294 1" mesh="LINK_ANKLE_PITCH_R" class="visual"/>
+                        <body name="LINK_ANKLE_ROLL_R">
+                            <inertial pos="0.030366 -0.0019504 -0.03549" quat="0 0.707107 0 0.707107" mass="1.1926" diaginertia="0.00646076 0.00606729 0.00105336"/>
+                            <joint name="J12_ANKLE_ROLL_R" pos="0 0 0" axis="1 0 0" range="-0.6 0.6" actuatorfrcrange="-24 24" class="visual"/>
+                            <geom type="mesh" rgba="0.75294 0.75294 0.75294 1" mesh="LINK_ANKLE_ROLL_R" class="visual"/>
+                            <body name="LINK_FOOT_R">
+                                <inertial pos="0 0 0" mass="1e-3" diaginertia="1e-12 1e-12 1e-12"/>
+                                <geom class="collision_right_foot"/>
+                                <site name="force_sensor_right_foot"/>
+                                <site name="torque_sensor_right_foot"/>
+                            </body>
+                        </body>
+                    </body>
+                </body>
+            </body>
+        </body>
+    </body>
+
+</mujoco>

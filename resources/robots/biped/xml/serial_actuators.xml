@@ -1,0 +1,18 @@
+<mujoco model = "serial_actuators">
+
+    <actuator>
+        <motor name="motor_J01_HIP_ROLL_L" joint="J01_HIP_ROLL_L" gear="1" ctrllimited="true" ctrlrange="-160 160"/>
+        <motor name="motor_J02_HIP_YAW_L" joint="J02_HIP_YAW_L" gear="1" ctrllimited="true" ctrlrange="-160 160"/>
+        <motor name="motor_J03_HIP_PITCH_L" joint="J03_HIP_PITCH_L" gear="1" ctrllimited="true" ctrlrange="-160 160"/>
+        <motor name="motor_J04_KNEE_PITCH_L" joint="J04_KNEE_PITCH_L" gear="1" ctrllimited="true" ctrlrange="-160 160"/>
+        <motor name="motor_J05_ANKLE_PITCH_L" joint="J05_ANKLE_PITCH_L" gear="1" ctrllimited="true" ctrlrange="-70 70" />
+        <motor name="motor_J06_ANKLE_ROLL_L" joint="J06_ANKLE_ROLL_L" gear="1" ctrllimited="true" ctrlrange="-70 70" />
+        <motor name="motor_J07_HIP_ROLL_R" joint="J07_HIP_ROLL_R" gear="1" ctrllimited="true" ctrlrange="-160 160" />
+        <motor name="motor_J08_HIP_YAW_R" joint="J08_HIP_YAW_R" gear="1" ctrllimited="true" ctrlrange="-160 160" />
+        <motor name="motor_J09_HIP_PITCH_R" joint="J09_HIP_PITCH_R" gear="1" ctrllimited="true" ctrlrange="-160 160" />
+        <motor name="motor_J10_KNEE_PITCH_R" joint="J10_KNEE_PITCH_R" gear="1" ctrllimited="true" ctrlrange="-160 160" />
+        <motor name="motor_J11_ANKLE_PITCH_R" joint="J11_ANKLE_PITCH_R" gear="1" ctrllimited="true" ctrlrange="-70 70" />
+        <motor name="motor_J12_ANKLE_ROLL_R" joint="J12_ANKLE_ROLL_R" gear="1" ctrllimited="true" ctrlrange="-70 70" />
+    </actuator>
+
+</mujoco>

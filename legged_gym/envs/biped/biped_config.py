@@ -30,7 +30,7 @@
 
 from legged_gym.envs.base.legged_robot_config import LeggedRobotCfg, LeggedRobotCfgPPO
 
-class CassieRoughCfg( LeggedRobotCfg ):
+class BipedRoughCfg( LeggedRobotCfg ):
     class env( LeggedRobotCfg.env):
         num_envs = 4096
         num_observations = 169
@@ -44,39 +44,39 @@ class CassieRoughCfg( LeggedRobotCfg ):
     class init_state( LeggedRobotCfg.init_state ):
         pos = [0.0, 0.0, 1.] # x,y,z [m]
         default_joint_angles = { # = target angles [rad] when action = 0.0
-            'hip_abduction_left': 0.1,
-            'hip_rotation_left': 0.,
-            'hip_flexion_left': 1.,
-            'thigh_joint_left': -1.8,
-            'ankle_joint_left': 1.57,
-            'toe_joint_left': -1.57,
+            'J01_HIP_ROLL_L': 0.0,
+            'J02_HIP_YAW_L': 0.,
+            'J03_HIP_PITCH_L': -0.24,
+            'J04_KNEE_PITCH_L': 0.48,
+            'J05_ANKLE_PITCH_L': -0.24,
+            'J06_ANKLE_ROLL_L': 0,
 
-            'hip_abduction_right': -0.1,
-            'hip_rotation_right': 0.,
-            'hip_flexion_right': 1.,
-            'thigh_joint_right': -1.8,
-            'ankle_joint_right': 1.57,
-            'toe_joint_right': -1.57
+            'J07_HIP_ROLL_R': 0.0,
+            'J08_HIP_YAW_R': 0.,
+            'J09_HIP_PITCH_R': -0.24,
+            'J10_KNEE_PITCH_R': 0.48,
+            'J11_ANKLE_PITCH_R': -0.24,
+            'J12_ANKLE_ROLL_R': 0.
         }
 
     class control( LeggedRobotCfg.control ):
         # PD Drive parameters:
-        stiffness = {   'hip_abduction': 100.0, 'hip_rotation': 100.0,
-                        'hip_flexion': 200., 'thigh_joint': 200., 'ankle_joint': 200.,
-                        'toe_joint': 40.}  # [N*m/rad]
-        damping = { 'hip_abduction': 3.0, 'hip_rotation': 3.0,
-                    'hip_flexion': 6., 'thigh_joint': 6., 'ankle_joint': 6.,
-                    'toe_joint': 1.}  # [N*m*s/rad]     # [N*m*s/rad]
+        stiffness = {   'HIP_ROLL': 100.0, 'HIP_YAW': 100.0,
+                        'HIP_PITCH': 200., 'KNEE_PITCH': 200., 'ANKLE_PITCH': 200.,
+                        'ANKLE_ROLL': 40.}  # [N*m/rad]
+        damping = { 'HIP_ROLL': 3.0, 'HIP_YAW': 3.0,
+                    'HIP_PITCH': 6., 'KNEE_PITCH': 6., 'ANKLE_PITCH': 6.,
+                    'ANKLE_ROLL': 1.}  # [N*m*s/rad]     # [N*m*s/rad]
         # action scale: target angle = actionScale * action + defaultAngle
         action_scale = 0.5
         # decimation: Number of control action updates @ sim DT per policy DT
         decimation = 4
         
     class asset( LeggedRobotCfg.asset ):
-        file = '{LEGGED_GYM_ROOT_DIR}/resources/robots/cassie/urdf/cassie.urdf'
-        name = "cassie"
-        foot_name = 'toe'
-        terminate_after_contacts_on = ['pelvis']
+        file = '{LEGGED_GYM_ROOT_DIR}/resources/robots/biped/urdf/biped.urdf'
+        name = "biped"
+        foot_name = 'LINK_FOOT'
+        terminate_after_contacts_on = ['LINK_BASE']
         flip_visual_attachments = False
         self_collisions = 1 # 1 to disable, 0 to enable...bitwise filter
   
@@ -99,11 +99,11 @@ class CassieRoughCfg( LeggedRobotCfg ):
             ang_vel_xy = -0.0
             feet_contact_forces = -0.
 
-class CassieRoughCfgPPO( LeggedRobotCfgPPO ):
+class BipedRoughCfgPPO( LeggedRobotCfgPPO ):
     
     class runner( LeggedRobotCfgPPO.runner ):
         run_name = ''
-        experiment_name = 'rough_cassie'
+        experiment_name = 'rough_biped'
 
     class algorithm( LeggedRobotCfgPPO.algorithm):
         entropy_coef = 0.01
