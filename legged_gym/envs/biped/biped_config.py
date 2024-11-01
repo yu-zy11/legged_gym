@@ -40,9 +40,10 @@ class BipedRoughCfg( LeggedRobotCfg ):
     class terrain( LeggedRobotCfg.terrain):
         measured_points_x = [-0.5, -0.4, -0.3, -0.2, -0.1, 0., 0.1, 0.2, 0.3, 0.4, 0.5] # 1mx1m rectangle (without center line)
         measured_points_y = [-0.5, -0.4, -0.3, -0.2, -0.1, 0., 0.1, 0.2, 0.3, 0.4, 0.5]
+        mesh_type='plane'
 
     class init_state( LeggedRobotCfg.init_state ):
-        pos = [0.0, 0.0, 1.] # x,y,z [m]
+        pos = [0.0, 0.0, 0.90] # x,y,z [m]
         default_joint_angles = { # = target angles [rad] when action = 0.0
             'J01_HIP_ROLL_L': 0.0,
             'J02_HIP_YAW_L': 0.,
@@ -62,13 +63,13 @@ class BipedRoughCfg( LeggedRobotCfg ):
     class control( LeggedRobotCfg.control ):
         # PD Drive parameters:
         stiffness = {   'HIP_ROLL': 100.0, 'HIP_YAW': 100.0,
-                        'HIP_PITCH': 200., 'KNEE_PITCH': 200., 'ANKLE_PITCH': 200.,
+                        'HIP_PITCH': 200., 'KNEE_PITCH': 200., 'ANKLE_PITCH': 40.,
                         'ANKLE_ROLL': 40.}  # [N*m/rad]
         damping = { 'HIP_ROLL': 3.0, 'HIP_YAW': 3.0,
-                    'HIP_PITCH': 6., 'KNEE_PITCH': 6., 'ANKLE_PITCH': 6.,
+                    'HIP_PITCH': 6., 'KNEE_PITCH': 6., 'ANKLE_PITCH': 1.,
                     'ANKLE_ROLL': 1.}  # [N*m*s/rad]     # [N*m*s/rad]
         # action scale: target angle = actionScale * action + defaultAngle
-        action_scale = 0.5
+        action_scale = 0.25
         # decimation: Number of control action updates @ sim DT per policy DT
         decimation = 4
         
@@ -86,11 +87,13 @@ class BipedRoughCfg( LeggedRobotCfg ):
         soft_torque_limit = 0.9
         max_contact_force = 300.
         only_positive_rewards = False
-        class scales( LeggedRobotCfg.rewards.scales ):
+        base_height_target = 0.75
+        class scales:
             termination = -200.
+            tracking_lin_vel = 1.0
             tracking_ang_vel = 1.0
-            torques = -5.e-6
-            dof_acc = -2.e-7
+            torques = -1.e-6
+            dof_acc = -2.e-8
             lin_vel_z = -0.5
             feet_air_time = 5.
             dof_pos_limits = -1.
