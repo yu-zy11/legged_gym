@@ -38,12 +38,12 @@
         <color rgba="0.75294 0.75294 0.75294 1" />
       </material>
     </visual>
-    <collision>
+    <!-- <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
         <mesh filename="../meshes/LINK_HIP_ROLL_L.STL" />
       </geometry>
-    </collision>
+    </collision> -->
   </link>
 
   <joint name="J01_HIP_ROLL_L" type="revolute">
@@ -52,7 +52,7 @@
     <child link="LINK_HIP_ROLL_L" />
     <axis xyz="1 0 0" />
     <limit lower="-0.523" upper="0.523" effort="140" velocity="25" />
-    <dynamics damping="0.0" friction="0.0" />
+    <dynamics damping="0.3" friction="0.005" />
   </joint>
 
   <link name="LINK_HIP_YAW_L">
@@ -70,12 +70,12 @@
         <color rgba="0.75294 0.75294 0.75294 1" />
       </material>
     </visual>
-    <collision>
+    <!-- <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
         <mesh filename="../meshes/LINK_HIP_YAW_L.STL" />
       </geometry>
-    </collision>
+    </collision> -->
   </link>
 
   <joint name="J02_HIP_YAW_L" type="revolute">
@@ -84,7 +84,7 @@
     <child link="LINK_HIP_YAW_L" />
     <axis xyz="0 0 1" />
     <limit lower="-0.3" upper="0.3" effort="140" velocity="25" />
-    <dynamics damping="0.0" friction="0.0" />
+    <dynamics damping="0.3" friction="0.005" />
   </joint>
 
   <link name="LINK_HIP_PITCH_L">
@@ -116,7 +116,7 @@
     <child link="LINK_HIP_PITCH_L" />
     <axis xyz="0 1 0" />
     <limit lower="-1.204" upper="1.204" effort="140" velocity="25" />
-    <dynamics damping="0.0" friction="0.0" />
+    <dynamics damping="0.3" friction="0.005" />
   </joint>
 
   <link name="LINK_KNEE_PITCH_L">
@@ -134,12 +134,12 @@
         <color rgba="0.75294 0.75294 0.75294 1" />
       </material>
     </visual>
-    <collision>
+    <!-- <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
         <mesh filename="../meshes/LINK_KNEE_PITCH_L.STL" />
       </geometry>
-    </collision>
+    </collision> -->
   </link>
 
   <joint name="J04_KNEE_PITCH_L" type="revolute">
@@ -148,7 +148,7 @@
     <child link="LINK_KNEE_PITCH_L" />
     <axis xyz="0 1 0" />
     <limit lower="0.0" upper="2.268" effort="140" velocity="25" />
-    <dynamics damping="0.0" friction="0.0" />
+    <dynamics damping="0.3" friction="0.005" />
   </joint>
 
   <link name="LINK_ANKLE_PITCH_L">
@@ -166,12 +166,12 @@
         <color rgba="0.75294 0.75294 0.75294 1" />
       </material>
     </visual>
-    <collision>
+    <!-- <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
         <mesh filename="../meshes/LINK_ANKLE_PITCH_L.STL" />
       </geometry>
-    </collision>
+    </collision> -->
   </link>
 
   <joint name="J05_ANKLE_PITCH_L" type="revolute">
@@ -180,7 +180,7 @@
     <child link="LINK_ANKLE_PITCH_L" />
     <axis xyz="0 1 0" />
     <limit lower="-1.0" upper="0.6" effort="24" velocity="31" />
-    <dynamics damping="0.0" friction="0.0" />
+    <dynamics damping="0.3" friction="0.005" />
   </joint>
 
   <link name="LINK_ANKLE_ROLL_L">
@@ -212,7 +212,7 @@
     <child link="LINK_ANKLE_ROLL_L" />
     <axis xyz="1 0 0" />
     <limit lower="-0.6" upper="0.6" effort="24" velocity="31" />
-    <dynamics damping="0.0" friction="0.0" />
+    <dynamics damping="0.3" friction="0.005" />
   </joint>
 
   <link name="LINK_FOOT_L">
@@ -252,12 +252,12 @@
         <color rgba="0.75294 0.75294 0.75294 1" />
       </material>
     </visual>
-    <collision>
+    <!-- <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
         <mesh filename="../meshes/LINK_HIP_ROLL_R.STL" />
       </geometry>
-    </collision>
+    </collision> -->
   </link>
 
   <joint name="J07_HIP_ROLL_R" type="revolute">
@@ -266,7 +266,7 @@
     <child link="LINK_HIP_ROLL_R" />
     <axis xyz="1 0 0" />
     <limit lower="-0.523" upper="0.523" effort="140" velocity="25" />
-    <dynamics damping="0.0" friction="0.0" />
+    <dynamics damping="0.3" friction="0.005" />
   </joint>
 
   <link name="LINK_HIP_YAW_R">
@@ -284,12 +284,12 @@
         <color rgba="0.75294 0.75294 0.75294 1" />
       </material>
     </visual>
-    <collision>
+    <!-- <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
         <mesh filename="../meshes/LINK_HIP_YAW_R.STL" />
       </geometry>
-    </collision>
+    </collision> -->
   </link>
 
   <joint name="J08_HIP_YAW_R" type="revolute">
@@ -298,7 +298,7 @@
     <child link="LINK_HIP_YAW_R" />
     <axis xyz="0 0 1" />
     <limit lower="-0.3" upper="0.3" effort="140" velocity="25" />
-    <dynamics damping="0.0" friction="0.0" />
+    <dynamics damping="0.3" friction="0.005" />
   </joint>
 
   <link name="LINK_HIP_PITCH_R">
@@ -330,7 +330,7 @@
     <child link="LINK_HIP_PITCH_R" />
     <axis xyz="0 1 0" />
     <limit lower="-1.204" upper="1.204" effort="140" velocity="25" />
-    <dynamics damping="0.0" friction="0.0" />
+    <dynamics damping="0.3" friction="0.005" />
   </joint>
 
   <link name="LINK_KNEE_PITCH_R">
@@ -348,12 +348,12 @@
         <color rgba="0.75294 0.75294 0.75294 1" />
       </material>
     </visual>
-    <collision>
+    <!-- <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
         <mesh filename="../meshes/LINK_KNEE_PITCH_R.STL" />
       </geometry>
-    </collision>
+    </collision> -->
   </link>
 
   <joint name="J10_KNEE_PITCH_R" type="revolute">
@@ -362,7 +362,7 @@
     <child link="LINK_KNEE_PITCH_R" />
     <axis xyz="0 1 0" />
     <limit lower="0.0" upper="2.268" effort="140" velocity="25" />
-    <dynamics damping="0.0" friction="0.0" />
+    <dynamics damping="0.3" friction="0.005" />
   </joint>
 
   <link name="LINK_ANKLE_PITCH_R">
@@ -380,12 +380,12 @@
         <color rgba="0.75294 0.75294 0.75294 1" />
       </material>
     </visual>
-    <collision>
+    <!-- <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
         <mesh filename="../meshes/LINK_ANKLE_PITCH_R.STL" />
       </geometry>
-    </collision>
+    </collision> -->
   </link>
 
   <joint name="J11_ANKLE_PITCH_R" type="revolute">
@@ -394,7 +394,7 @@
     <child link="LINK_ANKLE_PITCH_R" />
     <axis xyz="0 1 0" />
     <limit lower="-1.0" upper="0.6" effort="24" velocity="31" />
-    <dynamics damping="0.0" friction="0.0" />
+    <dynamics damping="0.3" friction="0.005" />
   </joint>
 
   <link name="LINK_ANKLE_ROLL_R">
@@ -426,7 +426,7 @@
     <child link="LINK_ANKLE_ROLL_R" />
     <axis xyz="1 0 0" />
     <limit lower="-0.6" upper="0.6" effort="24" velocity="31" />
-    <dynamics damping="0.0" friction="0.0" />
+    <dynamics damping="0.3" friction="0.005" />
   </joint>
 
   <link name="LINK_FOOT_R">
