@@ -107,7 +107,6 @@ class BipedRoughCfg(LeggedRobotCfg):
 
         # # see GymDofDriveModeFlags (0 is none, 1 is pos tgt, 2 is vel tgt, 3 effort)
         # default_dof_drive_mode = 3
-        # self_collisions = 0  # 1 to disable, 0 to enable...bitwise filter
         # # replace collision cylinders with capsules, leads to faster/more stable simulation
         # replace_cylinder_with_capsule = True
         # armature = 0.
@@ -126,7 +125,7 @@ class BipedRoughCfg(LeggedRobotCfg):
             tracking_ang_vel = 0.5
 
             lin_vel_z = -0.5
-            base_height = -0.1
+            base_height = -0.5
             ang_vel_xy = -0.1
             orientation = -1.0
 

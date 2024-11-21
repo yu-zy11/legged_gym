@@ -105,7 +105,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="../meshes/LINK_HIP_PITCH_L.STL" />
+        <sphere radius="0.02" />
       </geometry>
     </collision>
   </link>
@@ -134,12 +134,12 @@
         <color rgba="0.75294 0.75294 0.75294 1" />
       </material>
     </visual>
-    <!-- <collision>
+    <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
         <mesh filename="../meshes/LINK_KNEE_PITCH_L.STL" />
       </geometry>
-    </collision> -->
+    </collision>
   </link>
 
   <joint name="J04_KNEE_PITCH_L" type="revolute">
@@ -316,12 +316,12 @@
         <color rgba="0.75294 0.75294 0.75294 1" />
       </material>
     </visual>
-    <collision>
+    <!-- <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
         <mesh filename="../meshes/LINK_HIP_PITCH_R.STL" />
       </geometry>
-    </collision>
+    </collision> -->
   </link>
 
   <joint name="J09_HIP_PITCH_R" type="revolute">
@@ -348,12 +348,12 @@
         <color rgba="0.75294 0.75294 0.75294 1" />
       </material>
     </visual>
-    <!-- <collision>
+    <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
         <mesh filename="../meshes/LINK_KNEE_PITCH_R.STL" />
       </geometry>
-    </collision> -->
+    </collision>
   </link>
 
   <joint name="J10_KNEE_PITCH_R" type="revolute">

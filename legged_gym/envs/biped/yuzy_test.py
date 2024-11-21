@@ -39,7 +39,8 @@ gym.add_ground(sim, plane_params)
 
 # Loading Assets
 asset_root = os.path.dirname(__file__)+"/../../../resources/robots/biped"
-asset_file = "urdf/sa01_rl.urdf"
+asset_file = "xml/scene.xml"
+# asset_file = "urdf/sa01_rl.urdf"
 asset_options = gymapi.AssetOptions()
 asset_options.fix_base_link = True
 # asset_options.flip_visual_attachments = True
